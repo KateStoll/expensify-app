@@ -1,0 +1,33 @@
+{
+    "name": "Bird",
+    "version": "1.0.0",
+    "description": "",
+    "main": "Bird.js",
+    "scripts": {
+        "test": "jest",
+        "lint": "eslint .",
+        "ci": "ci"
+    },
+    "jest": {
+        "collectCoverage": true,
+        "coverageReporters": ["json", "html", "text"],
+        "collectCoverageFrom": [
+            "**/*.js",
+            "!**/.*.js",
+            "!**/node_modules/**",
+            "!coverage/"
+
+        ]
+    },
+    "devDependencies": {
+        "eslint": "^8.13.0",
+        "eslint-config-airbnb-base": "^15.0.0",
+        "eslint-plugin-import": "^2.26.0",
+        "jest": "^27.5.1"
+    },
+    "author": "vienna",
+    "license": "ISC",
+    "dependencies": {
+        "prompt-sync": "^4.2.0"
+    }
+}
