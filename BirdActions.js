@@ -1,7 +1,8 @@
 const BirdActions = {
+    
     testChoice: (playerInput, birdList) => {
 
-        if (birdList.includes(playerInput.toLowerCase())) {
+        if (birdList.includes(playerInput)) {
             return playerInput
         } else {
             return 'Error'
@@ -10,8 +11,7 @@ const BirdActions = {
     },
     
     getPlayerInput: (birdList, promptFunction) => {
-        const playerInput = promptFunction('Pick a bird: ' + birdList.toString())
-        return playerInput
+        return promptFunction('Pick a bird: ' + birdList.toString()).toLowerCase()
     }
 }
 
