@@ -1,10 +1,17 @@
+const { run } = require("jest-cli");
+
 const Bird = require("./Bird.js").Bird
 const prompt = require('prompt-sync')();
 const BirdActions = require('./BirdActions.js').BirdActions
 const Flying = require('./Flying.js').Flying
 
 class Execute {
+
     constructor() {
+        
+    } 
+    
+    run() {
         let birds = ['penguin', 'bluejay', 'eagle']
         let flight = true
         const birb = BirdActions.getPlayerInput(birds, prompt);
@@ -16,7 +23,9 @@ class Execute {
             console.log(response);
         }
     }
+
 };
+
 
 exports.Execute = Execute
 
