@@ -1,6 +1,9 @@
-const Flying = {
-    canFly: (playerInput, flight) => {
+class Flying  {
+     constructor() {
+
+     }
      
+    canFly = (playerInput, flight) => {     
     
         if (playerInput == 'penguin') {
             flight = false
@@ -14,7 +17,7 @@ const Flying = {
         
         return flight
     
-        }
+     }
 }
 
 exports.Flying = Flying    
