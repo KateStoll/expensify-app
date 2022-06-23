@@ -1,18 +1,19 @@
 const { test, expect, describe } = require('@jest/globals');
-const BirdActions = require('../BirdActions.js'). BirdActions
+const BirdActions = require('../BirdActions.js').BirdActions
+
 
 describe("testChoice", () => {
 
-    test("will return an error when the playerInput is no t in the list", () => {
+    test("will return an error when the playerInput is not in the list", () => {
         let birdList = ['penguin', 'bluejay', 'eagle']
 
-        expect(BirdActions.testChoice('umu', birdList)).toEqual('Error');
+        expect((new BirdActions()).testChoice('umu', birdList)).toEqual('Error');
     });
 
-    test("will return playerInput when the playerINput is included in the list", () => {
+    test("will return playerInput when the playerInput is included in the list", () => {
         let birdList = ['penguin', 'bluejay', 'eagle']
 
-        expect(BirdActions.testChoice('penguin', birdList)).toEqual('penguin');
+        expect((new BirdActions()).testChoice('penguin', birdList)).toEqual('penguin');
     });
     
 });
@@ -30,7 +31,7 @@ describe("getPlayerInput", () => {
         const fakePrompt = () => {
             return "fakeuserinput"
         }
-        expect(BirdActions.getPlayerInput([], fakePrompt)).toEqual("fakeuserinput")
+        expect((new BirdActions()).getPlayerInput([], fakePrompt)).toEqual("fakeuserinput")
     });
 
 });

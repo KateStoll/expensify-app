@@ -7,7 +7,7 @@ class BirdActions  {
         } else {
             return 'Error'
         }
-    
+    //validates the getPlayerInput
     }
     
     getPlayerInput(birdList, promptFunction){
@@ -16,3 +16,6 @@ class BirdActions  {
 }
 
 exports.BirdActions = BirdActions
+//mainpulate the json into a list(array)
+//birdlist into a func that accepts an object and returns it as an array
+//testchoice & getplayerinput require an array

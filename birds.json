@@ -1,0 +1,13 @@
+{
+    "penguin": {
+        "doesFly": false
+     }, 
+
+     "bluejay": {
+        "doesFly": true
+     },
+     
+    "eagle": {
+        "doesFly": true
+        }
+}

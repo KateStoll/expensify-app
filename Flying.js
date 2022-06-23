@@ -16,7 +16,7 @@ class Flying  {
         }
         
         return flight
-    
+        //returns a true or false 
      }
 }
 

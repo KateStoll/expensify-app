@@ -1,12 +1,13 @@
 {
-    "name": "Bird",
+    "name": "bird",
     "version": "1.0.0",
     "description": "",
     "main": "Bird.js",
     "scripts": {
-        "test": "jest",
+        "test": "jest && eslint .",
         "lint": "eslint .",
-        "ci": "ci"
+        "test-unit": "jest",
+        "lint:fix": "eslint --fix ."
     },
     "jest": {
         "collectCoverage": true,
