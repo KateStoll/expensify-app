@@ -1,4 +1,5 @@
 const {run} = require("jest-cli");
+const { exit } = require("process");
 const birds = require('./birds.json');
 const Bird = require("./Bird.js").Bird
 const prompt = require('prompt-sync')();
@@ -11,25 +12,23 @@ class Execute {
 
     }
 
-    run() {
+    run(prompty=prompt) {
         const actions = new BirdActions();
         //makes a new object and assigns it to actions
         const flyers = new Flying();
         //makes a new object and assigns it to flyers
-        let flight = true
 
         let birdList = birdConversion(birds);
             //birdList is the return of birdConversion func
         let response = 'Error'
         while (response == 'Error') {
-            const birb = actions.getPlayerInput(birdList, prompt);
+            const birb = actions.getPlayerInput(birdList, prompty);
                 //the return from getPlayerInput is assigned to birb
             response = actions.testChoice(birb, birdList);
                 //response is re-assigned the value returned from testChoice
-            console.log(response);
         }
         console.log("Congrats!");
-        console.log(new Bird(response, flyers.canFly(response, flight)));
+        console.log(new Bird(response, flyers.doesBirdFly(response, birds)));
             //
     }
     
@@ -39,6 +38,7 @@ class Execute {
 function birdConversion(avian){
     return Object.keys(avian);
 }
+//object.keys gets the bird names from (avian)
 //pass in birds.json as an arg to bird conversion instead of an global inport
 
 //by exporting Excute makes it an atrribute of the module
