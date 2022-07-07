@@ -1,10 +1,10 @@
 const {run} = require("jest-cli");
 const { exit } = require("process");
-const birds = require('./birds.json');
 const Bird = require("./Bird.js").Bird
 const prompt = require('prompt-sync')();
 const BirdActions = require('./BirdActions.js').BirdActions
 const Flying = require('./Flying.js').Flying
+const fs = require('fs');
 
 class Execute {
     
@@ -17,7 +17,7 @@ class Execute {
         //makes a new object and assigns it to actions
         const flyers = new Flying();
         //makes a new object and assigns it to flyers
-
+        let birds = load();
         let birdList = birdConversion(birds);
             //birdList is the return of birdConversion func
         let response = 'Error'
@@ -34,6 +34,13 @@ class Execute {
     
 
 };
+
+
+function load(){
+    let data = fs.readFileSync('./birds.json', 'utf8');
+    return JSON.parse(data);
+}
+
 
 function birdConversion(avian){
     return Object.keys(avian);
